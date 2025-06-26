@@ -9,25 +9,19 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    
     "schema:build": "node prisma/scripts/build-schema.js",
     "schema:watch": "node prisma/scripts/watch-schema.js",
     "schema:validate": "npm run schema:build && prisma validate",
-    
     "migrate:dev": "npm run schema:build && prisma migrate dev",
     "migrate:deploy": "npm run schema:build && prisma migrate deploy",
     "migrate:reset": "npm run schema:build && prisma migrate reset",
-    
     "prisma:generate": "npm run schema:build && prisma generate",
     "prisma:studio": "npm run schema:build && prisma studio",
     "prisma:format": "npm run schema:build && prisma format",
     "prisma:push": "npm run schema:build && prisma db push",
-    
     "db:seed": "npm run schema:build && npx prisma db seed -- --seed-file prisma/seed.js",
     "db:reset": "npm run schema:build && prisma migrate reset --force",
-    
     "dev:full": "concurrently \"npm run schema:watch\" \"next dev\"",
-    
     "prepare": "husky install",
     "send:reminders": "node scripts/sendReminders.js"
   },
@@ -56,6 +50,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.0",
+    "@faker-js/faker": "^9.8.0",
     "@testing-library/jest-dom": "^6.6.2",
     "@testing-library/react": "^16.0.1",
     "autoprefixer": "^10.4.20",
